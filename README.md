@@ -1,6 +1,8 @@
 # Fakestore
 Este proyecto es una simulación de una tienda online, no realiza ventas reales, los datos son consumidos desde una API llamada Fake Store, la idea principal del proyecto es demostrar habilidades para consumir y manejar los datos de una API. El proyecto permite navegar entre componentes, demostrar los datos como catálogo, filtrarlo entre categorías y ordenarlos entre mayor o menor precio. 
 
+DEMO del proyecto: https://fakestore-9ac4f.web.app
+
 ## Funcionalidades:
 -	Catalogo de producto con vista individual
 -	Filtros dinámicos por categoría
