@@ -1,5 +1,26 @@
 # Fakestore
+Este proyecto es una simulación de una tienda online, no realiza ventas reales, los datos son consumidos desde una API llamada Fake Store, la idea principal del proyecto es demostrar habilidades para consumir y manejar los datos de una API. El proyecto permite navegar entre componentes, demostrar los datos como catálogo, filtrarlo entre categorías y ordenarlos entre mayor o menor precio. 
 
+## Funcionalidades:
+-	Catalogo de producto con vista individual
+-	Filtros dinámicos por categoría
+-	Orden de productos de mayor o menor precio.
+-	Filtro para mostrar productos relacionados
+-	Sistema de navegación con routerLink, queryParams y fragment.
+-	Carrito de compras con almacenamiento en localStorage;
+-	Cálculo de subtotal, envió (simulación) y total.
+-	Diseño responsive para todos los dispositivos
+  
+## Tecnologías usadas:
+-	Angular 19
+-	TypeScript
+-	SCSS
+-	RxJS / BehaviorSubject
+-	API REST publica (utilizada para los productos, llamada API FAKE STORE)
+-	HTML5 
+-	LocalStorage
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
 
 ## Development server
