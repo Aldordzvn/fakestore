@@ -1,0 +1,86 @@
+<div class="home_container">
+    <section>
+        <div class="landing_container">
+            <div class="landing_main">
+                <div class="txt_container_monitor">
+                    <p class="landing_title">Acer <span>SB220Q</span></p>
+                    <p class="landing_subtitle">Ultra-Thin</p>
+                    <button class="btnMainLanding" routerLink="/producto"
+                        [queryParams]="{id:13, category:'electronics'}" fragment="producto">Shop Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="landings_container">
+            <div class="left_landings_container">
+                <div class="backpack_container">
+                    <!-- <img [src]="bpImg" alt="back pack image" class="bpImg"> -->
+                    <p class="backpack_title">Fjallraven</p>
+                    <p class="backpack_description">Your perfect pack for everyday use and walks in the forest. Stash
+                        your laptop (up to 15 inches) in the padded sleeve, your everyday.</p>
+                </div>
+                <div class="ring_container">
+                    <!-- <img [src]="ringImg" alt="Ring Image" class="ringImg"> -->
+                    <p class="ring_title">White Gold Plated <span>Princess</span></p>
+                    <p class="ring_description">
+                        Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her.
+                    </p>
+                </div>
+                <div class="shirt_container">
+                    <!-- <img [src]="shirtImg" alt="Shirt Image" class="shirtImg"> -->
+                    <p class="shirt_title">Slim Fit T-Shirt
+                    <p>
+                    <p class="shirt_description">
+                        Slim-fitting style.
+                    </p>
+                </div>
+            </div>
+            <div class="right_landing">
+                <div class="samsung_container">
+                    <!-- <img [src]="monitorImg" alt="Samsung Monitor" class="monitorImg"> -->
+                    <p class="samsung_title">Super Ultrawide Screen <span>QLED</span></p>
+                    <p class="samsung_description">49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch
+                        screen</p>
+                    <button class="samsungBtn" routerLink="/producto"
+                        [queryParams]="{id:14, category:'electronics'}" [fragment]="'producto'">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="categories">
+        <div class="category_container">
+            <h1>Browse By Category</h1>
+            <div class="card_container">
+                <button class="categoryBtn" routerLink="/catalogo" [queryParams]="{category:`men's clothing`}">
+                    <img [src]="menC" alt="Men Icon" class="icon">
+                    <p class="card_title">Men's Clothing</p>
+                </button>
+                <button class="categoryBtn" routerLink="/catalogo" [queryParams]="{category:'jewelery'}">
+                    <img [src]="jewelry" alt="Jewelry Icon" class="icon">
+                    <p class="card_title">Jewelry</p>
+                </button>
+                <button class="categoryBtn" routerLink="/catalogo" [queryParams]="{category:`electronics`}">
+                    <img [src]="electronic" alt="Electronics Icon" class="icon">
+                    <p class="card_title">Electronics</p>
+                </button>
+                <button class="categoryBtn" routerLink="/catalogo" [queryParams]="{category:`women's clothing`}">
+                    <img [src]="women" alt="Women Icon" class="icon">
+                    <p class="card_title">Women's Clothing</p>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="best_rated_section">
+        <h1 class="bestRated_title">Best Rated</h1>
+        <div class="bestRated_container">
+            @for (item of bestRated; track item) {
+            <li class="li_best">
+                <img src="{{item.image}}" alt="Imagen" class="img_best">
+                <p class="best_title">{{item.title}}</p>
+                <p class="best_price">{{item.price | currency:'MXN':'symbol-narrow':'1.2-2'}}</p>
+                <button class="best_button" routerLink="/producto"
+                    [queryParams]="{id:item.id, category:item.category}" fragment="producto">Buy Now</button>
+            </li>
+            }
+        </div>
+    </section>
+</div>

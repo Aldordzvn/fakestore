@@ -1,0 +1,118 @@
+<div class="catalogo_container">
+    <div class="categories_mobile" [class.showMenu]="toggleFilters">
+        <div class="back_container" (click)="toggleFilterMenu()">
+            <img [src]="leftArrowImg" alt="arrow">
+            <p>Back</p>
+        </div>
+        <div class="lblCatalogo_container">
+            <div class="lblcatalogo_items">
+                <label class="container_check">
+                    <input type="checkbox" class="checkCategorie">
+                    <span class="txtCheckC">Men's Clothing</span>
+                </label>
+                <label class="container_check">
+                    <input type="checkbox" class="checkCategorie">
+                    <span class="txtCheckC">Jewelery</span>
+                </label>
+                <label class="container_check">
+                    <input type="checkbox" class="checkCategorie">
+                    <span class="txtCheckC">Electronics</span>
+                </label>
+                <label class="container_check">
+                    <input type="checkbox" class="checkCategorie">
+                    <span class="txtCheckC">Women's Clothing</span>
+                </label>
+            </div>
+
+            <button class="applyBtn" (click)="toggleFilterMenu()">Apply</button>
+        </div>
+    </div>
+    <div class="catalogo_elements">
+        <section>
+            <div class="flujo_links">
+                <a routerLink="/" class="link_flujo">Home</a>
+                <img [src]="arrowImg" alt="arrow">
+                <a routerLink="/catalogo" class="link_flujo selected">Catalog</a>
+            </div>
+        </section>
+        <section>
+            <div class="categories_container">
+                <div class="aside_left">
+                    <button (click)="toggleMostrar()" class="cat_slider">Categories <img [src]="arrowSliderImg"
+                            alt="arrow" class="btnCategoriesSlider"></button>
+
+                    <div class="categories_aside_container" [class.open]="mostrarElementos">
+                        @for (item of categories; track $index) {
+                        <label class="container_check">
+                            <input type="checkbox" [value]="item" class="checkCategorie"
+                                (change)="onCategoryChange($event)"
+                                [checked]="selectedCategories.includes(item)">
+                            <span class="txtCheckC">{{item}}</span>
+                        </label>
+                        }
+                        <!-- <label class="container_check">
+                            <input type="checkbox" [value]="categories[0]" class="checkCategorie"
+                                (change)="onCategoryChange($event)"
+                                [checked]="selectedCategories.includes(categoriaCheck)">
+                            <span class="txtCheckC">Men's Clothing</span>
+                        </label> -->
+                        <!-- <label class="container_check">
+                            <input type="checkbox" [value]="categories[1]" class="checkCategorie"
+                                (change)="onCategoryChange($event)" [checked]="selectedCategories.includes(categoriaCheck)">
+                            <span class="txtCheckC">Jewelry</span>
+                        </label> <label class="container_check">
+                            <input type="checkbox" [value]="categories[2]"  class="checkCategorie"
+                                (change)="onCategoryChange($event)" [checked]="selectedCategories.includes(categoriaCheck)">
+                            <span class="txtCheckC">Electronics</span>
+                        </label> <label class="container_check">
+                            <input type="checkbox" [value]="categories[3]"  class="checkCategorie"
+                                (change)="onCategoryChange($event)" [checked]="selectedCategories.includes(categoriaCheck)">
+                            <span class="txtCheckC">Women's Clothing</span>
+                        </label> -->
+                    </div>
+
+                </div>
+                <div class="aside_rigth">
+                    <div class="top_elements">
+                        <div class="selected_container">
+                            <p class="txtSelectedP">Selected Products:</p>
+                            <p class="txtSelectedN">20</p>
+                        </div>
+                        <div class="filter_container">
+                            <button class="btnCMobile" (click)="toggleFilterMenu()">Categories <img [src]="filterImg"
+                                    alt=""></button>
+                            <select name="" id="" (change)="onOrderChange($event)">
+                                <option value="" disabled>--------- OPTIONS ---------</option>
+                                <option value="all">All</option>
+                                <option value="lower">Lower Price</option>
+                                <option value="higher">Higher Price</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="items_container" [class.hiddenAll]="toggleShowAllProducts">
+                        @for(card of items; track card.id){
+                        <li class="card_item">
+                            <img [src]="card.image" alt="image card" class="imgCard">
+                            <p class="title_card">{{card.title}}</p>
+                            <p class="price_card">{{card.price | currency: 'MXN': 'symbol-narrow':'1.2-2'}}</p>
+                            <button class="btnCard" routerLink="/producto"
+                                [queryParams]="{id:card.id, category:card.category}" fragment="producto">Buy Now</button>
+                        </li>
+                        }
+                    </div>
+                    <div class="items_container" [class.hiddenFiltered]="toggleFilteredProducts">
+                        @for(card of filteredProducts; track card.id){
+                        <li class="card_item">
+                            <img [src]="card.image" alt="image card" class="imgCard">
+                            <p class="title_card">{{card.title}}</p>
+                            <p class="price_card">{{card.price | currency: 'MXN': 'symbol-narrow':'1.2-2'}}</p>
+                            <button class="btnCard" routerLink="/producto"
+                                [queryParams]="{id:card.id, category:card.category}" fragment="producto">Buy Now</button>
+                        </li>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

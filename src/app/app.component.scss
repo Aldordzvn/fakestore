@@ -1,0 +1,233 @@
+@import '../styles.scss';
+
+@include full_hd {
+    .headerMain {
+        height: 8.8rem;
+        background-color: $blanco;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 16rem;
+        border-bottom: 1px solid $headerBg;
+    }
+
+    .headerMobile {
+        display: none;
+    }
+
+    .hamburguer_menu {
+        display: none;
+    }
+
+    .logoName {
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
+
+    .input_container {
+        display: flex;
+        background-color: $searchBg;
+        border-radius: 8px;
+        padding: 0 0 0 1rem;
+    }
+
+    .searchInput {
+        width: 30.72rem;
+        height: 5.6rem;
+        padding: 1rem;
+        font-size: 1.4rem;
+        border-radius: 8px;
+        background-color: $searchBg;
+        background-image: url('../../public/img/search.svg');
+        background-repeat: no-repeat;
+        background-size: 1.6rem;
+        background-position: 1.5rem;
+        padding: 1.2rem 2rem 1.2rem 4rem;
+        border: none;
+
+        &:focus {
+            border: none;
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    .categoriesHeader {
+        gap: 3rem;
+        display: flex;
+    }
+
+    .linkHeader {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $subtitleLanding;
+        text-decoration: none;
+
+        &:hover {
+            color: $negro;
+        }
+    }
+
+    .active-link {
+        color: $negro;
+    }
+
+    .icon {
+        width: 32px;
+
+        &.searchIcon {
+            width: 1.6rem;
+        }
+    }
+
+    .cartLink {
+        position: relative;
+        text-decoration: none;
+
+        & span {
+            &.countCart {
+                font-size: 1rem;
+                color: $negro;
+                font-weight: 500;
+                position: absolute;
+                left: 42%;
+                bottom: 46%;
+            }
+        }
+    }
+
+
+    footer {
+        background-color: $negro;
+    }
+
+    .left_side_footer {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding: 10rem;
+    }
+
+    .nameFooter {
+        font-size: 2rem;
+        color: $blanco;
+        margin: 0 0 0.7rem 0;
+    }
+
+    .descriptionFooter {
+        font-size: 1.2rem;
+        color: $subtitleLanding;
+        margin: 0;
+        width: 30rem;
+    }
+
+    .icon_redes_container {
+        display: flex;
+        gap: 3rem;
+    }
+
+    .iconImg_redes {
+        width: 4rem;
+    }
+
+    .zeroDisplay {
+        display: none;
+    }
+}
+
+@include limitDesktop {
+    .headerMain {
+        padding: 0 5rem;
+    }
+}
+
+@include tabletLimit {
+    .headerMain {
+        padding: 0 3rem;
+    }
+}
+
+@include telefono {
+    .showMenu {
+        transform: translate(100%);
+    }
+
+    .headerMain {
+        display: none;
+    }
+
+    .headerMobile {
+        display: flex;
+        justify-content: space-between;
+        padding: 2.4rem 1.6rem;
+        border-bottom: 1px solid $headerBg;
+        position: relative;
+    }
+
+    .hamburguer_menu {
+        display: block;
+        position: fixed;
+        height: 100dvh;
+        background-color: $blanco;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: transform 0.4s ease-in-out;
+        transform: translateX(0);
+        z-index: 999;
+
+        &:not(.showMenu) {
+            transform: translate(100%);
+        }
+
+        .back_container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid $headerBg;
+            padding: 2rem 1.6rem;
+
+            img {
+                cursor: pointer;
+            }
+
+            p {
+                font-size: 3rem;
+                margin: 0;
+                font-weight: 600;
+            }
+        }
+
+        .items_hamburguer_container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            li {
+                list-style: none;
+                border-bottom: 1px solid $headerBg;
+                padding: 2rem 1rem;
+
+                a {
+                    text-decoration: none;
+                    font-size: 3rem;
+                    color: $negro;
+                    font-weight: bold;
+                    display: flex;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+
+
+    .left_side_footer {
+        padding: 2rem;
+    }
+
+
+}

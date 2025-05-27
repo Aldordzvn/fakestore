@@ -1,0 +1,429 @@
+@import '../../styles.scss';
+
+@include full_hd {
+
+    .catalogo_container {
+        margin: 0 16rem 5.6rem 16rem;
+    }
+
+    .categories_mobile{
+        display: none;
+    }
+
+    .flujo_links {
+        display: flex;
+        gap: 1.6rem;
+        margin: 4rem 0;
+    }
+
+    .link_flujo {
+        font-weight: 500;
+        color: $linkFlujo;
+        font-size: 1.6rem;
+        text-decoration: none;
+        &:hover{
+            color: $negro;
+        }
+        &.selected{
+            color: $negro;
+            &:hover{
+                color: goldenrod;
+            }
+        }
+    }
+
+    .categories_container {
+        display: flex;
+        gap: 3.2rem;
+    }
+
+    .aside_left {
+        display: flex;
+        flex-direction: column;
+        max-width: 25.6rem;
+        width: 95%;
+        height: 40rem;
+    }
+
+    .cat_slider {
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: $negro;
+        display: flex;
+        justify-content: space-between;
+        background-color: $blanco;
+        border: transparent;
+        border-bottom: 1px solid $headerBg;
+        padding: 1.2rem 0;
+        cursor: pointer;
+    }
+
+    .btnCategoriesSlider {
+        padding: 0 1rem 0 0;
+        width: 2.4rem;
+    }
+
+    .categories_aside_container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin: 2rem 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        max-height: 0;
+    }
+
+    .open {
+        max-height: 20rem;
+    }
+
+    .container_check {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        & input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            height: 1.6rem;
+            width: 1.6rem;
+            background-color: transparent;
+            border: 1px solid $negro;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        & input[type="checkbox"]:after {
+            content: url('../../../public/img/check.svg');
+            display: none;
+            width: 0.8rem;
+        }
+
+        & input[type="checkbox"]:hover {
+            background-color: rgb(69, 69, 69);
+        }
+
+        & input[type="checkbox"]:checked {
+            background-color: $negro;
+        }
+
+        & input[type="checkbox"]:checked:after {
+            display: block;
+        }
+    }
+
+    .txtCheckC {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $negro;
+    }
+
+    .aside_rigth {
+        width: 100%;
+    }
+
+    .top_elements {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .selected_container {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .txtSelectedP {
+        color: $selectedTxt;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    .txtSelectedN {
+        font-size: 2rem;
+        font-weight: 500;
+        color: $negro;
+    }
+
+    .filter_container {
+        button {
+            &.btnCMobile {
+                visibility: hidden;
+            }
+        }
+
+        & select {
+            background-color: $blanco;
+            width: 25.6rem;
+            height: 4rem;
+            border-radius: 8px;
+            border: 1px solid $selecBg;
+            font-size: 1.5rem;
+            padding: 0 1rem;
+
+            & option {
+                font-size: 1.3rem;
+                font-weight: normal;
+                color: $negro;
+            }
+        }
+    }
+
+    .items_container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 1rem;
+        row-gap: 2rem;
+    }
+
+    .card_item {
+        width: 32rem;
+        height: 43.2rem;
+        background-color: $blanco;
+        border: 1px solid $linkFlujo;
+        border-radius: 8px;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center;
+        justify-content: center;
+        place-items: center;
+        text-align: center;
+        padding: 2rem;
+
+        & img {
+            &.imgCard {
+                max-width: 100%;
+                max-height: 14rem;
+                width: auto;
+                object-fit: cover;
+            }
+        }
+
+        & p {
+            &.title_card {
+                font-weight: 500;
+                font-size: 1.6rem;
+                color: $negro;
+            }
+
+            &.price_card {
+                font-size: 2.4rem;
+                font-weight: 600;
+                color: $negro;
+            }
+        }
+
+        & button {
+            &.btnCard {
+                width: 18.8rem;
+                height: 4.8rem;
+                background-color: $negro;
+                color: $blanco;
+                font-size: 1.4rem;
+                font-weight: 500;
+                border-radius: 8px;
+                border: 1px solid $negro;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $blanco;
+                    color: $negro;
+                }
+            }
+        }
+    }
+
+    .hiddenAll{
+        display: none;
+    }
+    .hiddenFiltered{
+        display: none;
+    }
+}
+
+@include desktop {
+    .card_item {
+        width: auto;
+    }
+}
+
+@include limitDesktop {
+    .catalogo_container {
+        margin: 0 5rem 5.6rem;
+    }
+
+    .items_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include tabletLimit {
+    .catalogo_container {
+        position: relative;
+        padding: 0 10rem 5.6rem;
+        margin: 0;
+
+    }
+
+    .showMenu{
+        transform: translate(100%);
+    }
+
+    .categories_mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: $blanco;
+        width: 100%;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.4s ease-in-out;
+        transform: translateX(0);
+
+        &:not(.showMenu) {
+            transform: translate(100%);
+        }
+    }
+
+    .back_container {
+        display: flex;
+        align-items: center;
+        padding: 2rem 1rem;
+        border-bottom: 1px solid $selecBg;
+        gap: 2rem;
+        cursor: pointer;
+
+        img {
+            width: 3rem;
+        }
+
+        p {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: bold;
+            color: $negro;
+        }
+    }
+
+
+    .lblCatalogo_container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lblcatalogo_items {
+        padding: 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .container_check {
+        input[type=checkbox] {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        span {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        & input[type="checkbox"]:after {
+            width: 1.5rem;
+        }
+    }
+
+    .applyBtn {
+        width: 30rem;
+        height: 5rem;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $negro;
+        background-color: $blanco;
+        border: 1px solid $negro;
+        border-radius: 4px;
+
+        &:hover {
+            background-color: $negro;
+            color: $blanco;
+        }
+    }
+
+    .aside_left {
+        display: none;
+    }
+
+    .items_container {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .top_elements {
+        display: block;
+    }
+
+    .filter_container {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        margin: 0 0 2rem;
+
+        select {
+            width: 100%;
+        }
+
+        button {
+            &.btnCMobile {
+                visibility: visible;
+                font-size: 1.5rem;
+                font-weight: normal;
+                color: $negro;
+                border: 1px solid $selecBg;
+                border-radius: 8px;
+                background-color: transparent;
+                height: 4rem;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: space-between;
+                cursor: pointer;
+                padding: 0 1rem;
+            }
+        }
+    }
+
+
+}
+
+@include telefono {
+    .catalogo_container {
+        padding: 0 1.6rem 5rem;
+    }
+
+    .card_item {
+        padding: 1rem;
+    }
+
+    .flujo_links {
+        display: none;
+    }
+}
+
+@include minTelefono {
+    .items_container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .lblcatalogo_items{
+        padding: 3rem;
+    }
+}

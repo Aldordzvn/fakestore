@@ -1,0 +1,612 @@
+@import '../../styles.scss';
+
+@include full_hd {
+    .landing_main {
+        display: flex;
+        background-color: $landing;
+        align-items: center;
+        height: 63.2rem;
+        padding: 0 16rem;
+        background-image: url('../../../public/img/acer1.svg');
+        background-repeat: no-repeat;
+        background-position: 100rem 12rem;
+    }
+
+    .landing_title {
+        color: $blanco;
+        font-size: 9.6rem;
+        font-weight: 100;
+        margin: 0;
+
+        & span {
+            font-weight: 600;
+        }
+    }
+
+    .landing_subtitle {
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin: 0;
+        color: $subtitleLanding;
+    }
+
+    .btnMainLanding {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $blanco;
+        width: 19.6rem;
+        height: 5.6rem;
+        background-color: transparent;
+        border: 1px solid $blanco;
+        border-radius: 4px;
+        margin: 3rem 0 0 0;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $blanco;
+            color: $negro;
+        }
+    }
+
+    .landings_container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .left_landings_container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .backpack_container {
+        background-image: url('../../../public/img/bp.svg');
+        background-repeat: no-repeat;
+        height: 32.8rem;
+        background-size: 36rem;
+        background-position: -13rem 5rem;
+        padding-left: 28rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .backpack_title {
+        font-size: 4.9rem;
+        font-weight: 500;
+        color: $negro;
+        margin: 0;
+    }
+
+    .backpack_description {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $subtitleLanding;
+    }
+
+    .ring_container {
+        height: 27.2rem;
+        background-color: $right_category_Landing;
+        background-image: url('../../../public/img/ring.svg');
+        background-repeat: no-repeat;
+        background-size: 24rem;
+        background-position: -15rem 0rem;
+        padding: 0 2rem 0 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .ring_title {
+        font-size: 2.9rem;
+        font-weight: 300;
+        margin: 0;
+
+        & span {
+            font-weight: 500;
+        }
+    }
+
+    .ring_description {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $subtitleLanding;
+    }
+
+    .shirt_container {
+        background-image: url('../../../public/img/shirt.svg');
+        background-repeat: no-repeat;
+        background-size: 30rem;
+        background-position: -10rem 5rem;
+        height: 27.2rem;
+        background-color: $leftLanding;
+        padding-left: 23rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .shirt_title {
+        font-size: 2.9rem;
+        color: $blanco;
+        font-weight: 300;
+        margin: 0;
+
+        & span {
+            font-weight: 500;
+        }
+    }
+
+    .shirt_description {
+        font-size: 1.4rem;
+        color: $subtitleLanding;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .samsung_container {
+        height: 60rem;
+        background-color: $right_category_Landing;
+        background-image: url('../../../public/img/curveMonitor.svg');
+        background-repeat: no-repeat;
+        background-position: 71rem;
+        padding-right: 25rem;
+        padding-left: 5.6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .samsung_title {
+        font-size: 6.4rem;
+        color: $negro;
+        font-weight: 100;
+        margin: 0;
+
+        & span {
+            font-weight: 500;
+        }
+
+        ;
+    }
+
+    .samsung_description {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $subtitleLanding;
+    }
+
+    .samsungBtn {
+        font-size: 1.6rem;
+        ;
+        color: $negro;
+        border: 1px solid $negro;
+        background-color: transparent;
+        width: 19.1rem;
+        height: 5.6rem;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 1rem 0 0 0;
+
+        &:hover {
+            background-color: $negro;
+            color: $blanco;
+        }
+    }
+
+    .acerImg {
+        max-width: 65rem;
+        width: 95%;
+        bottom: 0;
+        position: absolute;
+    }
+
+    .category_container {
+        margin: 8rem 16rem;
+
+        & h1 {
+            font-size: 2.4rem;
+            margin: 0 0 3.2rem 0;
+        }
+    }
+
+    .card_container {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .categoryBtn {
+        max-width: 16rem;
+        width: 95%;
+        height: 12.8rem;
+        background-color: $right_category_Landing;
+        border: none;
+        cursor: pointer;
+        border-radius: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        &:hover {
+            box-shadow: -1px 1px 24px 3px rgba(0, 0, 0, 0.39);
+            -webkit-box-shadow: -1px 1px 24px 3px rgba(0, 0, 0, 0.39);
+            -moz-box-shadow: -1px 1px 24px 3px rgba(0, 0, 0, 0.39);
+        }
+    }
+
+    .icon {
+        width: 3rem;
+    }
+
+    .card_title {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $negro;
+    }
+
+    .best_rated_section {
+        padding: 5.6rem 16rem;
+        background-color: $cardMain;
+
+    }
+
+    .bestRated_container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 1.6rem;
+        column-gap: 8rem;
+    }
+
+    .li_best {
+        width: 100%;
+        height: 43.2rem;
+        background-color: $blanco;
+        list-style: none;
+        display: grid;
+        place-items: center;
+        grid-template-rows: repeat(3, 1fr);
+        padding: 2rem;
+        border-radius: 8px;
+        border: 1px solid lightgray;
+    }
+
+    .img_best {
+        max-width: 100%;
+        max-height: 14rem;
+        width: auto;
+        object-fit: cover;
+    }
+
+    .best_title {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $negro;
+        text-align: center;
+    }
+
+    .best_price {
+        font-size: 2.4rem;
+        font-weight: 600;
+        color: $negro;
+    }
+
+
+    .best_button {
+        max-width: 18.8rem;
+        width: 95%;
+        height: 4.8rem;
+        background-color: $negro;
+        color: $blanco;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        font-size: 1.4rem;
+        font-weight: 500;
+
+        &:hover {
+            background-color: $blanco;
+            color: $negro;
+            border: 1px solid $negro;
+        }
+    }
+
+}
+
+@include desktop {
+    .landing_main {
+        background-position: 75rem 12rem;
+        padding: 0 13rem;
+    }
+
+    .samsung_container {
+        background-position: 58rem;
+    }
+
+}
+
+@include limitDesktop {
+    .landing_main {
+        background-position: 50% 100%;
+        background-size: 45rem;
+        padding: 0 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 3rem;
+    }
+
+    .txt_container_monitor {
+        text-align: center;
+    }
+
+    .samsung_container {
+        padding: 0;
+    }
+
+    .backpack_container {
+        background-position: -19rem 5rem;
+        padding-left: 20rem;
+        padding-right: 2rem;
+    }
+
+    .ring_container {
+        background-position: 0 20rem;
+        padding: 0 2rem 4rem 2rem;
+    }
+
+    .shirt_container {
+        padding: 0 2rem 5rem;
+        background-position: -10rem 20rem;
+    }
+
+    .samsung_container {
+        padding: 0 3rem 14rem;
+        background-position: 3rem 43rem;
+    }
+
+    .category_container {
+        margin: 8rem 10rem;
+    }
+
+    .best_rated_section {
+        padding: 5.6rem 4rem;
+    }
+
+    .bestRated_container {
+        column-gap: 2rem;
+
+    }
+}
+
+@include tabletLimit {
+    .landing_main {
+        padding-top: 3rem;
+
+        .txt_container_monitor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            p {
+                text-align: center;
+
+                &.landing_title {
+                    font-size: 8.5rem;
+                }
+            }
+        }
+    }
+
+    .backpack_container {
+        padding-left: 19rem;
+
+        .backpack_title {
+            font-size: 4.2rem;
+        }
+    }
+
+    .ring_container {
+        background-position: 0 20rem;
+        padding: 0 2rem 4rem 2rem;
+
+        p {
+            &.ring_title {
+                font-size: 2.7rem;
+            }
+        }
+    }
+
+    .shirt_container {
+        padding: 0 2rem 5rem;
+        background-position: -10rem 20rem;
+    }
+
+    .samsung_container {
+        padding: 0 3rem 14rem;
+        background-position: 3rem 43rem;
+
+        p {
+            &.samsung_title {
+                font-size: 6rem;
+            }
+        }
+    }
+
+    .category_container {
+        margin: 8rem 4rem;
+    }
+
+    .best_rated_section {
+        padding: 5.6rem 6rem;
+    }
+
+    .bestRated_container {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+
+
+}
+
+@include tablet {
+    .backpack_container {
+        padding-left: 19rem;
+    }
+
+    .backpack_title {
+        font-size: 4rem;
+    }
+
+    .samsung_container {
+        background-position: 3rem 47rem;
+    }
+}
+
+@include telefono {
+    .landing_main {
+        height: 76.9rem;
+        padding-top: 8.8rem;
+    }
+
+    .landings_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left_landings_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .backpack_container {
+        text-align: center;
+        padding: 4rem 1.6rem;
+        justify-content: flex-end;
+        background-size: 13rem;
+        background-position: 50% 2rem;
+        height: 37.6rem;
+        p{
+            &.backpack_title{
+                font-size: 3.4rem;
+            }
+            &.backpack_description{
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    .ring_container {
+        height: 39.2rem;
+        justify-content: flex-end;
+        text-align: center;
+        background-position: 50% 2rem;
+        background-size: 19rem;
+        padding: 4rem 1.6rem;
+        p{
+            &.ring_title{
+                font-size: 3.4rem;
+            }
+            &.ring_description{
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    .shirt_container {
+        height: 42.4rem;
+        padding: 4rem 1.6rem;
+        justify-content: flex-end;
+        text-align: center;
+        background-position: 50% 3rem;
+        background-size: 20rem;
+        p{
+            &.shirt_title{
+                font-size: 3.4rem;
+            }
+            &.shirt_description{
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    .samsung_container {
+        height: 50rem;
+        padding: 4rem 1.6rem;
+        justify-content: flex-end;
+        text-align: center;
+        background-position: 50% 5rem;
+        background-size: 30rem;
+
+        p {
+            &.samsung_title {
+                font-size: 3.5rem;
+            }
+            &.samsung_description{
+                font-size: 1.6rem;
+            }
+        }
+
+    }
+    .samsungBtn {
+        width: auto;
+    }
+
+    .category_container{
+        padding: 6.4rem 1.6rem;
+        margin: 0;   
+    }
+
+    .card_container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 11rem;
+        row-gap: 3rem;
+    }
+
+    .best_rated_section{
+        padding: 5.6rem 1.6rem;
+    }
+
+    .bestRated_container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@include minTelefono{
+    .landing_main{
+        background-size: 22rem;
+        height: 55rem;
+        .txt_container_monitor{
+            p{
+                &.landing_title{
+                    font-size: 6rem;
+                }
+            }
+        }
+    }
+
+    .backpack_container{
+        padding-bottom:1rem ;
+    }
+    .ring_container{
+        background-size: 16rem;
+        padding-bottom: 1rem;
+    }
+
+    .samsung_container{
+        background-size: 23rem;
+    }
+
+    .card_container{
+        gap: 1rem;
+    }
+
+    .bestRated_container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

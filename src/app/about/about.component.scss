@@ -1,0 +1,124 @@
+@import '../../styles.scss';
+
+@include full_hd {
+    .about_container{
+        padding: 13rem 16rem;
+    }
+
+    .about_elements {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+        img {
+            max-width: 100%;
+            width: auto;
+            object-fit: cover;
+            max-height: 63rem;
+        }
+
+        .about_text_container {
+            margin: 5rem 0;
+            h1 {
+                margin: 0;
+                font-size: 5.2rem;
+                color: $negro;
+            }
+
+            p {
+                &.description {
+                    font-size: 1.5rem;
+                    color: $txtAdvantaged;
+                }
+            }
+        }
+
+        .accordion_container {
+            width: 100%;
+            background-color: $blanco;
+            border: 1px solid $negro;
+
+            section {
+                &:nth-child(2){
+                    border-top: thin solid $negro;
+                }
+                &:nth-child(3){
+                    border-top: thin solid $negro;
+                }
+                p {
+                    &.title_card {
+                        display: block;
+                        width: 100%;
+                        background-color: #282828;
+                        margin: 0;
+                        color: $blanco;
+                        font-size: 1.5rem;
+                        padding: 2rem;
+                        border-bottom: thin solid $negro;
+                        cursor: pointer;
+
+                        &:hover {
+                            font-weight: 600;
+                            background-color: $blanco;
+                            color: $negro;
+                        }
+                    }
+                }
+
+                .card_content {
+                    font-size: 1.2rem;
+                    color: $txtAdvantaged;
+                    margin: 0;
+                    overflow: hidden;
+                    max-height: 0;
+                    transition: all .2s ease-in;
+
+                    &.description {
+                        &::before {
+                            content: "•";
+                        }
+                    }
+
+                    & dt {
+                        color: $negro;
+                        font-weight: 600;
+                        font-size: 1.3rem;
+                    }
+
+                    & dd {
+                        color: $txtAdvantaged;
+
+
+                        &::before {
+                            content: "•";
+                        }
+                    }
+
+                    &:hover {
+                        font-weight: bold;
+                    }
+
+                    &.show {
+                        overflow: none;
+                        padding: 2rem;
+                        max-height: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include limitDesktop{
+    .about_elements{
+        flex-direction: column;
+        img{
+        }
+    }
+}
+
+@include tabletLimit{
+    .about_container{
+        padding: 9rem 5rem;
+    }
+}

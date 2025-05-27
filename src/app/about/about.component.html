@@ -1,0 +1,54 @@
+<div class="about_container">
+    <div class="about_elements">
+        <img [src]="websiteImg" alt="">
+        <div class="about_text_container">
+            <h1>Sobre El Proyecto</h1>
+            <h2>Este proyecto fue desarrollado para mi portafolio profesional.</h2>
+            <p class="description">
+                Es un Ecommerce simulado que consume datos de una API externa llamada FakeStore. Tiene una estructuración de componentes dentro del framework Angular V19. Uso de HTML y SCSS para construir una interfaz responsiva cuidando los detalles visuales y de experiencia para el usuario.
+            </p>
+            <p class="description objetivo">
+                El objetivo de este desarrollo fue practicar y demostrar habilidades técnicas como:
+            </p>
+            <div class="accordion_container">
+                <section class="card" (click)="toggleAccordion('card1')">
+                    <p class="title_card">Consumo de APIs REST</p>
+                    <p class="card_content description" [class.show]="toggleStates['card1']">
+                        Uso de servicios HttpClient para consumir o filtrar datos desde los endpoints proporcionados por la API FakeStore.
+                    </p>
+                </section>
+                <section class="card" (click)="toggleAccordion('card2')">
+                    <p class="title_card">Manejo de datos</p>
+                    <dl class="card_content" [class.show]="toggleStates['card2']">
+                       <dt>Servicios</dt> 
+                       <dd>Centralización de las llamadas HTTP en servicios para separar la lógica del componente.</dd>
+                       <dt>Suscripciones (subscribe)</dt>
+                       <dd>Uso de Observable.subscribe() para obtener y usar los datos en componentes, proporcionados desde la API.</dd>
+                       <dt>Uso de filtros</dt>
+                       <dd>Productos relacionados</dd>
+                       <dd>Excluir productos que contengan el mismo ID</dd>
+                       <dd>Limite de productos mostrados en secciones</dd>
+                       <dt>Persistencia en LocalStorage</dt>
+                       <dd>Información del carrito guardada para conservar los datos aunque el usuario cambie de ruta o recargue la página.</dd>
+                    </dl>
+                </section>
+                <section class="card">
+                    <p class="title_card" (click)="toggleAccordion('card3')">Diseño de interface</p>
+                    <dl class="card_content" [class.show]="toggleStates['card3']">
+                        <dt>Simplicidad visual</dt>
+                        <dd>El diseño es ligero, ordenado y fácil de entender.</dd>
+                        <dt>Espaciado</dt>
+                        <dd>Uso adecuado de márgenes y padding para que los elementos puedan ser distinguidos.</dd>
+                        <dt>Tipografia Clara</dt>
+                        <dd>Uso de fuentes legibles con tamaños adecuados y jerarquía visual como títulos grandes y textos descriptivos más pequeños.</dd>
+                        <dt>Paleta de colores limitada</dt>
+                        <dd>Fondos neutros para destacar el contenido</dd>
+                        <dd>Colores principales con buen contraste</dd>
+                        <dt>Interacción intuitiva</dt>
+                        <dd>Botones definidos, iconos claros y navegación sencilla.</dd>
+                    </dl>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="cart_container" [class.cartObjects]="toggleCartView">
+    <div class="cart_elements">
+        <div class="left_side_cart">
+            <h1>Shopping Cart</h1>
+            <div class="items_container">
+                @for(item of filterItems; track item.id){
+                <li class="cart_element">
+                    <img [src]="item.image" alt="Carrito Item">
+                    <p class="producto_detail_title">{{item.title}} </p>
+                    <div class="quantity_detail_container">
+                        <button class="btnControl minus" (click)="removeSingleProduct(item.id)">-</button>
+                        <input type="number" class="quantityInput" value="{{item.quantity}}" readonly>
+                        <button class="btnControl add" (click)="incrementarProducto(item)">+</button>
+                    </div>
+                    <p class="price_item">{{item.price | currency: 'MXN':'symbol-narrow':'1.2-2'}}</p>
+                    <button class="btnDeleteItem" (click)="deleteAllProduct(item.id)"> <img [src]="deleteItemImg"
+                            alt="close svg"> </button>
+                </li>
+                }
+            </div>
+        </div>
+        <div class="right_side_cart">
+            <h1>Order Summary</h1>
+            <div class="orderTotal_container">
+                <div class="orderSummary subtotal_container">
+                    <p class="subtotalTxt">Subtotal</p>
+                    <p class="subtotalPrice">{{subtotal | currency: 'MXN': 'symbol-narrow': '1.2-2'}}</p>
+                </div>
+                <div class="orderSummary estimated_container">
+                    <p class="estimatedTxt">Estimated Tax</p>
+                    <p class="estimatedPrice">$50.00</p>
+                </div>
+                <div class="orderSummary estimatedShipping_container">
+                    <p class="esShippingTxt">Estimated Shipping & Handling</p>
+                    <p class="esShippingPrice">$29.00</p>
+                </div>
+                <div class="orderSummary total_container">
+                    <p class="totalTxt">Total</p>
+                    <p class="totalPrice">{{total | currency: 'MXN':'symbol-narrow': '1.2-2'}} </p>
+                </div>
+                <button (click)="showModal()">Buy</button>
+            </div>
+        </div>
+    </div>
+    <div class="successContainer" [class.showModal]="toggleModal">
+        <div class="successScreen">
+            <div class="success_items">
+                <img [src]="successImg" alt="success">
+                <p>Order Complete</p>
+                <button (click)="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="noItems_container" [class.emptyObjects]="toggleEmptyObjects">
+    <div class="noItems">
+        <img [src]="emptyImg" alt="">
+    </div>
+</div>

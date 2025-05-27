@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import 'normalize.css';
+
 $blanco: #fff;
+$headerBg: #B5B5B5;
+$searchBg: #F5F5F5;
 $negro: #000000;
 $landing: #211C24;
 $leftLanding: #353535;
@@ -7,7 +12,82 @@ $right_category_Landing: #EDEDED;
 $subtitleLanding: #909090;
 $categoryBG: #FAFAFA;
 $cardMain: #F6F6F6;
+$linkFlujo: #A4A4A4;
+$selectedTxt: #6C6C6C;
+$selecBg: #D4D4D4;
+$descripcionProduct: #9D9D9D;
+$txtAdvantaged: #717171;
+$borderInputQuantity: #D9D9D9;
+$borderItemSeparator: #A3A3A3;
+$borderSummary: #EBEBEB;
+
+// Medidas
+$telefono: 480px;
+$minCel: 320px;
+$tablet: 768px;
+$tabletLimit: 878px;
+$limitDesktop: 1024px;
+$desktop_comun: 1537px;
+$full_HD: 1920px;
+
+// FUENTES
+$mainFont: "Inter", sans-serif;
+
+//CAMBIOS AL HTML
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: $mainFont;
+}
+
+*,
+*:before,
+*::after {
+    box-sizing: inherit;
+}
 
 
+// Mixins
+@mixin full_hd{
+    @media (max-width: $full_HD){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media(max-width: $desktop_comun){
+        @content;
+    }
+}
+
+@mixin limitDesktop{
+    @media(max-width: $limitDesktop){
+        @content;
+    }
+}
+
+@mixin tabletLimit{
+    @media(max-width: $tabletLimit){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media(max-width: $tablet){
+        @content;
+    }
+}
+
+@mixin telefono{
+    @media(max-width: $telefono){
+        @content;
+    }
+}
+
+@mixin minTelefono{
+    @media(max-width: $minCel){
+        @content;
+    }
+}
 
 

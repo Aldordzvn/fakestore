@@ -1,0 +1,70 @@
+<section id="producto">
+    <div class="flujo_container">
+        <div class="flujo_elements">
+            <a routerLink="/" class="txtFlujo">Home</a>
+            <img [src]="arrowFlujo" alt="arrowFlujo">
+            <a routerLink="/catalogo" class="txtFlujo">Catalog</a>
+            <img [src]="arrowFlujo" alt="arrowFlujo">
+            <a routerLink="/catalogo" [queryParams]="{category:producto.category}" class="txtFlujo">Categoria</a>
+            <img [src]="arrowFlujo" alt="arrowFlujo">
+            <p class="txtFlujo">{{producto.title}}</p>
+        </div>
+    </div>
+</section>
+<section class="productAll_section" >
+    <div class="imgContainer">
+        <img [src]="producto.image" alt="Imagen">
+    </div>
+    <div class="info_container">
+        <p class="title_producto">{{producto.title}}</p>
+        <p class="price_producto">{{producto.price | currency: 'MXN': 'symbol-narrow':'1.2-2'}}</p>
+        <p class="description_producto">{{producto.description}}</p>
+        <div class="btnContainer">
+            <button (click)="addProductCar()">Add to Card</button>
+        </div>
+        <div class="advantage_products">
+            <div class="advantageElements">
+                <div class="icon_container">
+                    <img [src]="cartImg" alt="Carro">
+                </div>
+                <div class="text_container deliveryC">
+                    <p class="txtAdvantage">free delivery</p>
+                    <p class="txtTime">1-2 day</p>
+                </div>
+            </div>
+            <div class="advantageElements">
+                <div class="icon_container">
+                    <img [src]="stockImg" alt="stock">
+                </div>
+                <div class="text_container stockC">
+                    <p class="txtAdvantage">In Stock</p>
+                    <p class="txtTime">Today</p>
+                </div>
+            </div>
+            <div class="advantageElements">
+                <div class="icon_container">
+                    <img [src]="guaranteedImg" alt="Guaranteed">
+                </div>
+                <div class="text_container guaranteedC">
+                    <p class="txtAdvantage">Guaranteed</p>
+                    <p class="txtTime">1 Year</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="related_products_container">
+        <h1>Related Products</h1>
+        <div class="related_items">
+            @for(item of relatedProducts; track $index){
+                <li>
+                    <img [src]="item.image" alt="related">
+                    <p class="title_related">{{item.title}}</p>
+                    <p class="price_related">{{item.price | currency:'MXN':'symbol-narrow':'1.2-2'}}</p>
+                    <button (click)="recargarProducto(item.id)" routerLink="/producto" [queryParams]="{id:item.id,category:item.category}" fragment="producto">Buy Now</button>
+                </li>
+            }
+        </div>
+    </div>
+</section>

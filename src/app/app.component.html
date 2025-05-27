@@ -1,0 +1,44 @@
+<header class="headerMain">
+  <p class="logoName" routerLink="">FLEXO</p>
+  <input type="search" placeholder="Buscar" class="searchInput">
+  <div class="categoriesHeader">
+    <a class="linkHeader" routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a class="linkHeader" routerLink="/about" routerLinkActive="active-link">About</a>
+    <a class="linkHeader" routerLink="/catalogo" routerLinkActive="active-link">Categories</a>
+  </div>
+  <a class="cartLink" routerLink="/cart">
+    <img [src]="shoppingCart" alt="Shopping Icon" class="icon shopping">
+    <span class="countCart" [class.zeroDisplay]="countZero">{{countItems}}</span>
+  </a>
+</header>
+<header class="headerMobile">
+  <p class="logoName" routerLink="">FLEXO</p>
+  <img [src]="burgerImg" alt="burguer" class="burgerMobile" (click)="toggleMenuHamburger()">
+</header>
+<div class="hamburguer_menu" [class.showMenu]="toggleMenu">
+  <div class="back_container" (click)="toggleMenuHamburger()">
+    <img [src]="leftArrowImg" alt="arrow">
+    <p>Back</p>
+  </div>
+  <div class="items_hamburguer_container">
+    <li><a routerLink="/" (click)="toggleMenuHamburger()">Home</a></li>
+    <li><a routerLink="/about" (click)="toggleMenuHamburger()">About</a></li>
+    <li><a routerLink="/catalogo" (click)="toggleMenuHamburger()">Categories</a></li>
+    <li><a routerLink="/cart" (click)="toggleMenuHamburger()">Cart</a></li>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<footer>
+  <div class="left_side_footer">
+    <div class="name_description">
+      <p class="nameFooter">FLEXO</p>
+      <p class="descriptionFooter">
+        Productos consumidos desde la API FakeStore, proyecto para Portafolio con Angular v19 y SCSS.
+      </p>
+    </div>
+    <div class="icon_redes_container">
+      <a href="#"><img [src]="github" alt="github Icon" class="iconImg_redes"></a>
+      <a href="#"><img [src]="linkedin" alt="Linkedin Icon" class="iconImg_redes"></a>
+    </div>
+  </div>
+</footer>
