@@ -368,6 +368,10 @@
             margin: 0 2rem;
         }
     }
+
+    .right_side_cart{
+        padding: min(3rem, 10%);
+    }
 }
 
 @include minTelefono {
